@@ -5,11 +5,35 @@
 //         .then(function (response) {
 
 
-if (Modernizr.geolocation) {
-    navigator.geolocation.getCurrentPosition(success, fail);
-    elMap.textContent = 'Checking location...';
-} else {
-    elMap.textContent = msg;
 
+function geoLocation() {
+    const status = document.querySelector("#status");
+    const map = document.querySelector("#map");
+
+    map.href = "";
+    map.textContent = "";
+
+    function success(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+
+        status.textContent = "";
+        map.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+        localStorage.setItem('Latitude', latitude);
+        localStorage.setItem('Longitude', longitude);
+    }
+
+    function error() {
+        status.textContent = "Unable to retrieve your location";
+    }
+
+    if (!navigator.geolocation) {
+        status.textContent = "Geolocation is not supported by your browser";
+    } else {
+        status.textContent = "Checking location…";
+        navigator.geolocation.getCurrentPosition(success, error);
+    }
 }
+
+document.querySelector("#find").addEventListener("click", geoLocation);
 
