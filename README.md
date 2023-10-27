@@ -32,10 +32,10 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 ## Contributors
 
 <ul>
-<li>Calvin Culpepper - https://github.com/culligula<li>
-<li>Tyler Fruik - https://github.com/TylerFruik<li>
+<li>Calvin Culpepper - https://github.com/culligula</li>
+<li>Tyler Fruik - https://github.com/TylerFruik</li>
 <li>Irene Joo - https://github.com/ir3nejoo</li>
-<li>Amber Watson - https://github.com/watsona22<li>
+<li>Amber Watson - https://github.com/watsona22</li>
 </ul>
 
 ## Credits
