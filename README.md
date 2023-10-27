@@ -17,7 +17,7 @@ Lil Chefs - Recipe Ideas is intended to be used by students on a budget to utili
 
 <ul>
 <li>Each ingredients listed will have the option to check off the ingredits to include in the recipe.</li>
-<li>Fetching live local weather will generate recepies that is more weather appropriate allowing the user to enjoy nice bowl of soup on a winter night.</ul> 
+<li>Fetching live local weather will generate recepies that is more weather appropriate allowing the user to enjoy nice bowl of soup on a winter night.</li> 
 <li>It may also be used to save/access previously enjoyed recipe.</li>
 </ul>
 
@@ -44,9 +44,9 @@ Credits to the following content below that served as a resource for the develop
 
 <ul>
 <li>CSS Framework - Lucidchart - https://lucidchart.com/</li>
-<li>First Server-side API - Recipe - </li>
-<li>Second Server-side API - Weather - </li>
-<li>Thank you to our instuctor and TA's that had helped us build this project 😁 </li>
+<li>First Server-side API - Recipe -</li>
+<li>Second Server-side API - Weather -</li>
+<li>Thank you to our instuctor and TA's that had helped us build this project 😁</li>
 </ul>
 
 ## License
