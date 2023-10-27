@@ -1,7 +1,7 @@
 
-resultTextEl = document.querySelector('#result-text');
+
 resultContentEl = document.querySelector('#empty-container');
-searchFormEl = document.querySelector('#recipe-search');
+
 
 
 
@@ -15,6 +15,29 @@ function getParams(){
 // function printResults() {
 
 // }
+
+// get the ingredient
+
+
+
+  const buttoneOne = document.getElementById("btn-1")
+  const buttonTwo = document.getElementById("btn-2")
+  const buttonThree = document.getElementById("btn-3")
+
+buttoneOne.addEventListener("click", myFunction) 
+  const buttonOneValue = button.value;
+  console.log(buttonOneValue)
+
+
+buttoneTwo.addEventListener("click", myFunction) 
+  const buttonTwoValue = button.value;
+
+
+buttoneThree.addEventListener("click", myFunction) 
+  const buttonThreeValue = button.value;
+
+
+resultContentEl.textContent.
 
 var myHeaders = new Headers();
 myHeaders.append("X-RapidAPI-Key", "da196eedb5msh00e79c58139ed2ap1d41a0jsn4c2725d1a2ec");
