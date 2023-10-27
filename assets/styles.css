@@ -1,0 +1,81 @@
+/* VARIABLES */
+:root {
+    --primary: #B4C1CA;
+    --secondary: #AF0808;
+    --background: #1F1F1F;
+}
+
+/* MAJOR SELECTORS */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+.wrapper {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--background);
+}
+
+.wrapper {
+    padding: 0px 20px;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    color: var(--primary);
+    font-size: 40px;
+}
+
+header h1 {
+    margin: 20px;
+}
+
+/* .MENU */
+.menu {
+    background-color: #272525;
+    border-radius: 5px;
+    border-width: 1px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+    color: var(--primary);
+    font-size: 18px;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 30px 40px;
+    text-align: center;
+}
+
+/* .BTN */
+.btn {
+    border: none;
+    background-color: var(--secondary);
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+    color: hsl(0, 0%, 100%);
+    font-size: 28px;
+    margin: 8px 30px 2px;
+    padding: 14px 20px;
+    text-align: center;
+    cursor: pointer;
+    filter: brightness(0.6);
+    transition: filter 0.4s ease;
+}
+  
+.btn:hover {
+    filter: brightness(1);
+}
+  
+.btn.selected {
+    filter: brightness(1);
+    border: 2px solid white;
+    margin: 6px 16px 0px;
+}
