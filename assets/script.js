@@ -36,4 +36,3 @@ function geoLocation() {
 }
 
 document.querySelector("#find").addEventListener("click", geoLocation);
-
