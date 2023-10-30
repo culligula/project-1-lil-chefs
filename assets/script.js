@@ -32,7 +32,13 @@ function geoLocation() {
     }
 }
 
-document.querySelector("#find").addEventListener("click", geoLocation);
+// #region MENU NAVIGATION
+function showMainMenu() {
+    mainMenu.style.display = 'block';
+    ingredientsMenu.style.display = 'none';
+    newRecipesMenu.style.display = 'none';
+    savedRecipesMenu.style.display = 'none';
+}
 
 var gets = function (user) {
     var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&appid=343936b9fd05267869e0bf8c1d533d1c';

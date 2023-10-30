@@ -79,3 +79,22 @@ header h1 {
     border: 2px solid white;
     margin: 6px 16px 0px;
 }
+
+
+
+/* Page Load !GOES ON BOTTOM OF FILE */
+#main-menu {
+    display: block;
+}
+
+#ingredients-menu {
+    display: none;
+}
+
+#new-recipes-menu {
+    display: none;
+}
+
+#saved-recipes-menu {
+    display: none;
+}
