@@ -18,23 +18,24 @@
                 <button id="ingredients-menu-btn" class="btn">Find New Recipes</button>
                 <button id="view-saved-recipes-btn" class="btn">View Saved Recipes</button>
             </div>
-            <div id="search-box"></div>
             <div id="ingredients-menu" class="menu">
                 <h2>Select Ingredients</h2>
+                <div id="search-box"></div>
                 <div id="included-ingredients" class="ingredient-grid">
-                    <!--! INCLUDED #region -->
-                    <div id="chicken" class="ingredient-btn">
+                    <!--! INCLUDED --> <!-- #region -->
+                    <div id="chicken-in" class="ingredient-btn">
                         <button id="btn-1" value="chicken" class="btn">🍗</button>
                         <h3>chicken</h3>
                     </div>
-                    <div id="potatoes" class="ingredient-btn">
+                    <div id="potatoes-in" class="ingredient-btn">
                         <button id="btn-2" value="potatoes" class="btn">🥔</button>
                         <h3>potatoes</h3>
                     </div>
-                    <div id="milk" class="ingredient-btn">
+                    <div id="milk-in" class="ingredient-btn">
                         <button id="btn-3" value="milk" class="btn">🥛</button>
                         <h3>milk</h3>
                     </div>
+                    <!--  * TEMP INGREDIENTS
                     <div id="temp_ingredient" class="ingredient-btn">
                         <button class="btn">🧁</button>
                         <h3>temp_ingredient</h3>
@@ -123,11 +124,25 @@
                         <button class="btn">🧁</button>
                         <h3>temp_ingredient</h3>
                     </div>
+                    * END TEMP INGREDIENTS-->
                     <!-- #endregion -->
                 </div>
                 <h2>Select Exclusions</h2>
                 <div id="excluded-ingredients" class="ingredient-grid">
-                    <!--! EXCLUDED #region -->
+                    <!--! EXCLUDED --> <!-- #region -->
+                    <div id="chicken-ex" class="ingredient-btn">
+                        <button id="btn-1" value="chicken" class="btn">🍗</button>
+                        <h3>chicken</h3>
+                    </div>
+                    <div id="potatoes-ex" class="ingredient-btn">
+                        <button id="btn-2" value="potatoes" class="btn">🥔</button>
+                        <h3>potatoes</h3>
+                    </div>
+                    <div id="milk-ex" class="ingredient-btn">
+                        <button id="btn-3" value="milk" class="btn">🥛</button>
+                        <h3>milk</h3>
+                    </div>
+                    <!--  * TEMP INGREDIENTS
                     <div id="temp_ingredient" class="ingredient-btn">
                         <button class="btn">🧁</button>
                         <h3>temp_ingredient</h3>
@@ -216,31 +231,20 @@
                         <button class="btn">🧁</button>
                         <h3>temp_ingredient</h3>
                     </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
+                    * END TEMP INGREDIENTS-->
                     <!-- #endregion -->
                 </div>
-              <h2>Ready to go?</h2>
-              <button id="find-recipes-btn" class="btn">Find Recipes</button>
-          </div>
-          <div id="new-recipes-menu" class="menu">
-              <h2>New Recipes to Try!</h2>
-              <!-- list of new recipes w/ save button for each-->
-          </div>
-          <div id="saved-recipes-menu" class="menu">
-              <h2>Your Saved Recipes</h2>
-              <!-- list of saved recipes -->
-          </div>
+                <h2>Ready to go?</h2>
+                <button id="find-recipes-btn" class="btn">Find Recipes</button>
+            </div>
+            <div id="new-recipes-menu" class="menu">
+                <h2>New Recipes to Try!</h2>
+                <!-- list of new recipes w/ save button for each-->
+            </div>
+            <div id="saved-recipes-menu" class="menu">
+                <h2>Your Saved Recipes</h2>
+                <!-- list of saved recipes -->
+            </div>
         </main>
         <footer>
             <p>Last updated: 10/26/2023</p>
