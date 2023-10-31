@@ -1,20 +1,8 @@
-const mainMenuBtn = document.getElementById('return-to-main-menu');
-const ingredientsMenuBtn = document.getElementById('ingredients-menu-btn');
-const newRecipesBtn = document.getElementById('find-recipes-btn');
-const viewSavedRecipesBtn = document.getElementById('view-saved-recipes-btn');
-const mainMenuBtn2 = document.getElementById('return-to-main-menu-2');
 
-const mainMenu = document.getElementById('main-menu');
-const ingredientsMenu = document.getElementById('ingredients-menu');
-const newRecipesMenu = document.getElementById('new-recipes-menu');
-const savedRecipesMenu =document.getElementById('saved-recipes-menu');
 
-// var gets = function (user) {
-//     var apiUrl = 'https://api.openweathermap.org/data/2.5/forecast?'
+var location = document.querySelector("#find-location-btn");
 
-//     fetch(apiUrl)
-//         .then(function (response) {
-
+//template from MDN: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API
 function geoLocation() {
     const status = document.querySelector("#status");
     const map = document.querySelector("#map");
@@ -46,51 +34,27 @@ function geoLocation() {
 
 // #region MENU NAVIGATION
 function showMainMenu() {
-  mainMenu.style.display = 'block';
-  ingredientsMenu.style.display = 'none';
-  newRecipesMenu.style.display = 'none';
-  savedRecipesMenu.style.display = 'none';
+    mainMenu.style.display = 'block';
+    ingredientsMenu.style.display = 'none';
+    newRecipesMenu.style.display = 'none';
+    savedRecipesMenu.style.display = 'none';
 }
 
-function showIngredientsMenu() {
-  mainMenu.style.display = 'none';
-  ingredientsMenu.style.display = 'block';
-  newRecipesMenu.style.display = 'none';
-  savedRecipesMenu.style.display = 'none';
-}
+var gets = function (user) {
+    var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&appid=343936b9fd05267869e0bf8c1d533d1c';
 
-function showNewRecipesMenu() {
-  mainMenu.style.display = 'none';
-  ingredientsMenu.style.display = 'none';
-  newRecipesMenu.style.display = 'block';
-  savedRecipesMenu.style.display = 'none';
-}
-
-function showSavedRecipesMenu() {
-  mainMenu.style.display = 'none';
-  ingredientsMenu.style.display = 'none';
-  newRecipesMenu.style.display = 'none';
-  savedRecipesMenu.style.display = 'block';
-}
-
-mainMenuBtn.addEventListener('click', () => {
-  showMainMenu();
-})
-
-ingredientsMenuBtn.addEventListener('click', () => {
-  showIngredientsMenu();
-})
-
-
-newRecipesBtn.addEventListener('click', () => {
-  showNewRecipesMenu();
-})
-
-viewSavedRecipesBtn.addEventListener('click', () => {
-  showSavedRecipesMenu();
-})
-
-mainMenuBtn2.addEventListener('click', () => {
-  showMainMenu();
-})
-//#endregion
+    fetch(apiUrl)
+        .then(function (response) {
+            if (response.ok) {
+                response.json().then(function (data) {
+                    console.log(data);
+                    displayRecipes(data);
+                });
+            } else {
+                alert('Error: ' + response.statusText);
+            }
+        })
+        .catch(function (error) {
+            alert('Unable to recommend recipes');
+        });
+};
