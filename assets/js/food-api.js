@@ -49,21 +49,21 @@ document.getElementById("find-recipes-btn").addEventListener("click", function (
       }
     })
     .then(data => {
-      // Process the API response data
+    
       const searchResultsEl = document.getElementById('new-recipes-menu');
       console.log(data);
 
-      // Loop through the recipe hits and display them
+    
       data.hits.forEach(hit => {
         const recipe = hit.recipe;
         const recipeName = recipe.label;
         const recipeLink = recipe.url;
 
-        // Create an HTML element to display each recipe
+        
         const recipeElement = document.createElement("div");
         recipeElement.innerHTML = `<a href="${recipeLink}" target="_blank">${recipeName}</a>`;
         
-        // Append the recipe element to the results container
+        
         searchResultsEl.appendChild(recipeElement);
       });
     })
