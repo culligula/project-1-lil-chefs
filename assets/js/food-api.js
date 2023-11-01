@@ -11,9 +11,11 @@ searchContentEl = document.getElementById('search-box');
 
 // }
 
-// get the ingredient
-  
+// get the ingredient 
 const concatenateButtons = document.querySelectorAll('.btn');
+
+// print the selected ingredients to an empty container, then use that string
+// as a search query in the call to the api
 searchContentEl = document.getElementById('search-box');
 let concatenatedValue = '';
 const emptySpace = String.fromCharCode(32);
@@ -25,6 +27,7 @@ concatenateButtons.forEach(button => {
   });
 });
 
+// api call, initiated on click
 document.getElementById("find-recipes-btn").addEventListener("click", function () {
   const query = concatenatedValue;
   const apiKey = "da196eedb5msh00e79c58139ed2ap1d41a0jsn4c2725d1a2ec";
