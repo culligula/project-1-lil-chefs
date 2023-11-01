@@ -3,14 +3,6 @@
 searchContentEl = document.getElementById('search-box');
 
 
-
-
-
-// print the results to the results page
-// function printResults() {
-
-// }
-
 // get the ingredient 
 const concatenateButtons = document.querySelectorAll('.btn');
 
