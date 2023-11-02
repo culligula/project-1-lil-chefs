@@ -17,46 +17,51 @@ const modal = document.getElementById('modal');
 
 //template from MDN: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API
 function geoLocation() {
+  let status = document.querySelector("#status");
 
-    function success(position) {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
+  function success(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
 
-        status.textContent = "";
-        map.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
-        localStorage.setItem('Latitude', latitude);
-        localStorage.setItem('Longitude', longitude);
-    }
+    status = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+    localStorage.setItem('Latitude', latitude);
+    localStorage.setItem('Longitude', longitude);
+  }
 
-    function error() {
-        status.textContent = "Unable to retrieve your location";
-    }
+  function error() {
+    status.textContent = "Unable to retrieve your location";
+  }
 
-    if (!navigator.geolocation) {
-        status.textContent = "Geolocation is not supported by your browser";
-    } else {
-        status.textContent = "Checking location…";
-        navigator.geolocation.getCurrentPosition(success, error);
-    }
+  if (!navigator.geolocation) {
+    status.textContent = "Geolocation is not supported by your browser";
+  } else {
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+  if (!navigator.geolocation) {
+    status.textContent = "Geolocation is not supported by your browser";
+  } else {
+    status.textContent = "Checking location…";
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
 }
 
 var gets = function (user) {
-    var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&appid=343936b9fd05267869e0bf8c1d533d1c';
+  var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&appid=343936b9fd05267869e0bf8c1d533d1c';
 
-    fetch(apiUrl)
-        .then(function (response) {
-            if (response.ok) {
-                response.json().then(function (data) {
-                    console.log(data);
-                    displayRecipes(data);
-                });
-            } else {
-                alert('Error: ' + response.statusText);
-            }
-        })
-        .catch(function (error) {
-            alert('Unable to recommend recipes');
+  fetch(apiUrl)
+    .then(function (response) {
+      if (response.ok) {
+        response.json().then(function (data) {
+          console.log(data);
+          displayRecipes(data);
         });
+      } else {
+        alert('Error: ' + response.statusText);
+      }
+    })
+    .catch(function (error) {
+      alert('Unable to recommend recipes');
+    });
 };
 
 // #region MENU NAVIGATION
@@ -122,7 +127,7 @@ mainMenuBtn2.addEventListener('click', () => {
 })
 
 yesBtn.addEventListener('click', () => {
-  //call weather and location API and filter results as such.
+  geoLocation();
   showFindRecipesMenu();
 })
 
