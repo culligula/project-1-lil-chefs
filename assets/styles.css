@@ -60,6 +60,32 @@ header h1 {
 /* #endregion */
 
 #search-box {
+    background-color: #4d4a4a;
+    border-radius: 5px;
+    border-width: 1px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+    color: var(--primary);
+    font-size: 18px;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 30px 40px;
+    text-align: center;
+}
+
+#exclusion-box {
+    background-color: #4d4a4a;
+    border-radius: 5px;
+    border-width: 1px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+    color: var(--primary);
+    font-size: 18px;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 30px 40px;
+    text-align: center;
+}
+
+#saved-recipes-list {
     background-color: #272525;
     border-radius: 5px;
     border-width: 1px;
@@ -106,6 +132,21 @@ header h1 {
 
 /* * .BTN *//* #region */
 .btn {
+    border: none;
+    background-color: var(--secondary);
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+    color: hsl(0, 0%, 100%);
+    font-size: 28px;
+    margin: 8px 30px 2px;
+    padding: 14px 20px;
+    text-align: center;
+    cursor: pointer;
+    filter: brightness(0.6);
+    transition: filter 0.4s ease;
+}
+
+.btn-2 {
     border: none;
     background-color: var(--secondary);
     border-radius: 20px;

@@ -10,7 +10,7 @@
 <body>
     <div class="wrapper">
         <header>
-            <h1>Lil' Chefs 🥘</h1>
+            <h1>Lil' Chefs :shallow_pan_of_food:</h1>
         </header>
         <main>
             <div id="main-menu" class="menu">
@@ -21,218 +21,45 @@
             <div id="ingredients-menu" class="menu">
                 <h2>Select Ingredients</h2>
                 <div id="search-box"></div>
+                <div id="exclusion-box"></div>
                 <div id="included-ingredients" class="ingredient-grid">
                     <!--! INCLUDED --> <!-- #region -->
                     <div id="chicken-in" class="ingredient-btn">
-                        <button id="btn-1" value="chicken" class="btn">🍗</button>
+                        <button id="btn-chicken-in" value="chicken" class="btn">:poultry_leg:</button>
                         <h3>Chicken</h3>
                     </div>
                     <div id="potatoes-in" class="ingredient-btn">
-                        <button id="btn-2" value="potatoes" class="btn">🥔</button>
+                        <button id="btn-potatoes-in" value="potatoes" class="btn">:potato:</button>
                         <h3>Potatoes</h3>
                     </div>
                     <div id="milk-in" class="ingredient-btn">
-                        <button id="btn-3" value="milk" class="btn">🥛</button>
+                        <button id="btn-milk-in" value="milk" class="btn">:glass_of_milk:</button>
                         <h3>Milk</h3>
                     </div>
-                    <!--  * TEMP INGREDIENTS
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
+                    <div id="eggs-in" class="ingredient-btn">
+                        <button id="btn-eggs-in" value="eggs" class="btn">:egg:</button>
+                        <h3>Eggs</h3>
                     </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    * END TEMP INGREDIENTS-->
-                    <!-- #endregion -->
                 </div>
                 <h2>Select Exclusions</h2>
                 <div id="excluded-ingredients" class="ingredient-grid">
                     <!--! EXCLUDED --> <!-- #region -->
                     <div id="chicken-ex" class="ingredient-btn">
-                        <button id="btn-1" value="chicken" class="btn">🍗</button>
+                        <button id="btn-chicken-ex" value="chicken" class="btn-2">:poultry_leg:</button>
                         <h3>Chicken</h3>
                     </div>
                     <div id="potatoes-ex" class="ingredient-btn">
-                        <button id="btn-2" value="potatoes" class="btn">🥔</button>
+                        <button id="btn-potatoes-ex" value="potatoes" class="btn-2">:potato:</button>
                         <h3>Potatoes</h3>
                     </div>
                     <div id="milk-ex" class="ingredient-btn">
-                        <button id="btn-3" value="milk" class="btn">🥛</button>
+                        <button id="btn-milk-ex" value="milk" class="btn-2">:glass_of_milk:</button>
                         <h3>Milk</h3>
                     </div>
-                    <!--  * TEMP INGREDIENTS
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
+                    <div id="eggs-ex" class="ingredient-btn">
+                        <button id="btn-eggs-ex" value="eggs" class="btn-2">:egg:</button>
+                        <h3>Eggs</h3>
                     </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    <div id="temp_ingredient" class="ingredient-btn">
-                        <button class="btn">🧁</button>
-                        <h3>temp_ingredient</h3>
-                    </div>
-                    * END TEMP INGREDIENTS-->
-                    <!-- #endregion -->
                 </div>
                 <h2>Ready to go?</h2>
                 <button id="find-recipes-btn" class="btn">Find Recipes</button>
@@ -249,8 +76,8 @@
             </div>
             <div id="saved-recipes-menu" class="menu">
                 <h2>Your Saved Recipes</h2>
-                <!-- list of saved recipes via localstorage -->
                 <button id="return-to-main-menu-2" class ="btn">Main Menu</button>
+                <div id="saved-recipes-list"></div>
             </div>
         </main>
     </div>
@@ -258,13 +85,9 @@
     <script src="./assets/script.js"></script>
 </body>
 </html>
-
 <!-- ! NOTES
   * At the bottom of the CSS file, the divs .ingredients-menu .new-recipes-menu and .saved-recipes-menu should be set to display: hidden
-
   * Clicking the buttons to go onto the next page will swap which div is hidden and which is showing.
-
   * Ingredients should be grids of 5x5
-
   * There is currently no display of current location or weather
     -->
