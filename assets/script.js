@@ -1,18 +1,18 @@
 // #region MENU NAVIGATION VARIABLES
-const mainMenuBtn = document.getElementById('return-to-main-menu');
-const ingredientsMenuBtn = document.getElementById('ingredients-menu-btn');
-const findRecipesBtn = document.getElementById('find-recipes-btn');
-const viewSavedRecipesBtn = document.getElementById('view-saved-recipes-btn');
-const mainMenuBtn2 = document.getElementById('return-to-main-menu-2');
-const yesBtn = document.getElementById('weather-yes');
-const noBtn = document.getElementById('weather-no');
+const mainMenuBtn = document.getElementById("return-to-main-menu");
+const ingredientsMenuBtn = document.getElementById("ingredients-menu-btn");
+const findRecipesBtn = document.getElementById("find-recipes-btn");
+const viewSavedRecipesBtn = document.getElementById("view-saved-recipes-btn");
+const mainMenuBtn2 = document.getElementById("return-to-main-menu-2");
+const yesBtn = document.getElementById("weather-yes");
+const noBtn = document.getElementById("weather-no");
 
-
-const mainMenu = document.getElementById('main-menu');
-const ingredientsMenu = document.getElementById('ingredients-menu');
-const findRecipesMenu = document.getElementById('new-recipes-menu');
-const savedRecipesMenu = document.getElementById('saved-recipes-menu');
-const modal = document.getElementById('modal');
+const mainMenu = document.getElementById("main-menu");
+const ingredientsMenu = document.getElementById("ingredients-menu");
+const findRecipesMenu = document.getElementById("new-recipes-menu");
+const savedRecipesMenu = document.getElementById("saved-recipes-menu");
+const modal = document.getElementById("modal");
+let popup = document.getElementById("popup");
 // #endregion
 
 //template from MDN: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API
@@ -24,8 +24,8 @@ function geoLocation() {
     const longitude = position.coords.longitude;
 
     status = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
-    localStorage.setItem('Latitude', latitude);
-    localStorage.setItem('Longitude', longitude);
+    localStorage.setItem("Latitude", latitude);
+    localStorage.setItem("Longitude", longitude);
   }
 
   function error() {
@@ -46,7 +46,12 @@ function geoLocation() {
 }
 
 var gets = function (user) {
-  var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&appid=343936b9fd05267869e0bf8c1d533d1c';
+  var apiUrl =
+    "https://api.openweathermap.org/data/2.5/weather?lat=" +
+    latitude +
+    "&lon=" +
+    longitude +
+    "&appid=343936b9fd05267869e0bf8c1d533d1c";
 
   fetch(apiUrl)
     .then(function (response) {
@@ -56,11 +61,11 @@ var gets = function (user) {
           displayRecipes(data);
         });
       } else {
-        alert('Error: ' + response.statusText);
+        alert("Error: " + response.statusText);
       }
     })
     .catch(function (error) {
-      alert('Unable to recommend recipes');
+      alert("Unable to recommend recipes");
     });
 };
 
@@ -70,68 +75,81 @@ function resetConditions() {
 }
 
 function showMainMenu() {
-  mainMenu.style.display = 'block';
-  ingredientsMenu.style.display = 'none';
-  findRecipesMenu.style.display = 'none';
-  savedRecipesMenu.style.display = 'none';
-  modal.style.display = 'none';
+  mainMenu.style.display = "block";
+  ingredientsMenu.style.display = "none";
+  findRecipesMenu.style.display = "none";
+  savedRecipesMenu.style.display = "none";
+  modal.style.display = "none";
 }
 
 function showIngredientsMenu() {
-  mainMenu.style.display = 'none';
-  ingredientsMenu.style.display = 'block';
-  findRecipesMenu.style.display = 'none';
-  savedRecipesMenu.style.display = 'none';
-  modal.style.display = 'none';
+  mainMenu.style.display = "none";
+  ingredientsMenu.style.display = "block";
+  findRecipesMenu.style.display = "none";
+  savedRecipesMenu.style.display = "none";
+  modal.style.display = "none";
 }
 
 function showFindRecipesMenu() {
-  mainMenu.style.display = 'none';
-  ingredientsMenu.style.display = 'none';
-  findRecipesMenu.style.display = 'block';
-  savedRecipesMenu.style.display = 'none';
-  modal.style.display = 'none';
+  mainMenu.style.display = "none";
+  ingredientsMenu.style.display = "none";
+  findRecipesMenu.style.display = "block";
+  savedRecipesMenu.style.display = "none";
+  modal.style.display = "none";
 }
 
 function showSavedRecipesMenu() {
-  mainMenu.style.display = 'none';
-  ingredientsMenu.style.display = 'none';
-  findRecipesMenu.style.display = 'none';
-  savedRecipesMenu.style.display = 'block';
-  modal.style.display = 'none';
+  mainMenu.style.display = "none";
+  ingredientsMenu.style.display = "none";
+  findRecipesMenu.style.display = "none";
+  savedRecipesMenu.style.display = "block";
+  modal.style.display = "none";
 }
 
-function showModal() {
-  modal.style.display = 'block';
+/*function showModal() {
+  modal.style.display = "block";
+}
+function closeModal() {
+  modal.style.visibility = "hidden";
+}
+*/
+
+function openPopup() {
+  popup.classList.add("open-popup");
 }
 
-mainMenuBtn.addEventListener('click', () => {
+function closePopup() {
+  popup.classList.remove("open-popup");
+}
+
+mainMenuBtn.addEventListener("click", () => {
   showMainMenu();
-})
+});
 
-ingredientsMenuBtn.addEventListener('click', () => {
+ingredientsMenuBtn.addEventListener("click", () => {
   showIngredientsMenu();
-})
+});
 
-
-findRecipesBtn.addEventListener('click', () => {
+findRecipesBtn.addEventListener("click", () => {
   showModal();
-})
+});
 
-viewSavedRecipesBtn.addEventListener('click', () => {
+viewSavedRecipesBtn.addEventListener("click", () => {
   showSavedRecipesMenu();
-})
+});
 
-mainMenuBtn2.addEventListener('click', () => {
+mainMenuBtn2.addEventListener("click", () => {
   showMainMenu();
-})
+});
 
-yesBtn.addEventListener('click', () => {
+yesBtn.addEventListener("click", () => {
+  //call weather and location API and filter results as such.
+  closePopup();
+  showFindRecipesMenu();
   geoLocation();
-  showFindRecipesMenu();
-})
+});
 
-noBtn.addEventListener('click', () => {
+noBtn.addEventListener("click", () => {
   showFindRecipesMenu();
-})
+});
 //#endregion
