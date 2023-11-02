@@ -43,6 +43,12 @@ function geoLocation() {
     // status.textContent = "Checking location…";
     navigator.geolocation.getCurrentPosition(success, error);
   }
+  if (!navigator.geolocation) {
+    status.textContent = "Geolocation is not supported by your browser";
+  } else {
+    status.textContent = "Checking location…";
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
 }
 
 var gets = function (user) {
