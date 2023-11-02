@@ -80,7 +80,19 @@ header h1 {
 /* #endregion */
 
 /* * MODAL *//* #region */
-#modal {
+.popup {
+    width: 800px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
     /* should cover the entirety of the 
     #ingredients-menu div and block 
     functionality of all buttons beneath it. 
@@ -88,20 +100,32 @@ header h1 {
     display value. For the final functioning version,
     display has to be set to 'none'*/
 }
+
+.open-popup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
 /* #endregion */
 
 /* * .MENU *//* #region */
 .menu {
+    padding: 10px 60px;
     background-color: #272525;
     border-radius: 5px;
     border-width: 1px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
     color: var(--primary);
-    font-size: 18px;
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 30px;
+    outline: none;
     margin: 20px auto;
     max-width: 800px;
     padding: 30px 40px;
     text-align: center;
+    cursor: pointer;
+
 }
 /* #endregion */
 
