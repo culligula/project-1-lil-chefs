@@ -25,6 +25,7 @@ body {
     background-image: url(/assets/Images/Lil-Chef.jpg);
     width: 100vw;
     height: 100vh;
+    /*background does not repeat and content scroll*/
     background-size: cover;
     background-attachment: fixed;
     font-family: sans-serif;

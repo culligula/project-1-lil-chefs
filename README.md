@@ -45,7 +45,7 @@ Credits to the following content below that served as a resource for the develop
 <ul>
 <li>CSS Framework - Lucidchart - https://lucidchart.com/</li>
 <li>First Server-side API - Recipe -</li>
-<li>Second Server-side API - Weather -</li>
+<li>Weather API - Open Weather Map - https://openweathermap.org/api</li>
 <li>Thank you to our instuctor and TA's that had helped us build this project 😁</li>
 </ul>
 
