@@ -17,11 +17,6 @@ const modal = document.getElementById('modal');
 
 //template from MDN: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API
 function geoLocation() {
-    const status = document.querySelector("#status");
-    const map = document.querySelector("#map");
-
-    map.href = "";
-    map.textContent = "";
 
     function success(position) {
         const latitude = position.coords.latitude;
