@@ -18,16 +18,11 @@ const modal = document.getElementById('modal');
 //template from MDN: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API
 function geoLocation() {
   let status = document.querySelector("#status");
-  // const map = document.querySelector("#map");
-
-  // map.href = "";
-  // map.textContent = "";
 
   function success(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
 
-    // status.textContent = "";
     status = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
     localStorage.setItem('Latitude', latitude);
     localStorage.setItem('Longitude', longitude);
@@ -40,7 +35,6 @@ function geoLocation() {
   if (!navigator.geolocation) {
     status.textContent = "Geolocation is not supported by your browser";
   } else {
-    // status.textContent = "Checking location…";
     navigator.geolocation.getCurrentPosition(success, error);
   }
   if (!navigator.geolocation) {
