@@ -109,7 +109,6 @@ function showSavedRecipesMenu() {
 /*function showModal() {
   modal.style.display = "block";
 }
-
 function closeModal() {
   modal.style.visibility = "hidden";
 }
