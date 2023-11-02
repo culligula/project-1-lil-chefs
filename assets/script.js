@@ -135,9 +135,6 @@ mainMenuBtn2.addEventListener('click', () => {
 yesBtn.addEventListener('click', () => {
   geoLocation();
   showFindRecipesMenu();
-
-  //call weather and location API and filter results as such.
-  showFindRecipesMenu();
 })
 
 noBtn.addEventListener('click', () => {
