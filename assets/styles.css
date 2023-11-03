@@ -1,4 +1,7 @@
-/* * VARIABLES *//* #region */
+/* Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* VARIABLES *//* #region */
 :root {
     --primary: white;
     --secondary: #AF0808;
@@ -6,10 +9,11 @@
 }
 /* #endregion */
 
-/* * MAJOR SELECTORS *//* #region */
+/* MAJOR SELECTORS *//* #region */
 *,
 *::before,
 *::after {
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
@@ -22,7 +26,7 @@ body,
 }
 
 body {
-    background-image: url(/assets/Images/Lil-Chef.jpg);
+    background-image: url('./Images/Lil-Chef.jpg');
     width: 100vw;
     height: 100vh;
     /*background does not repeat and content scroll*/
@@ -34,6 +38,10 @@ body {
 
 .wrapper {
     padding: 0px 20px;
+}
+
+.overlay {
+    pointer-events: none;
 }
 
 main {
@@ -107,6 +115,7 @@ header h1 {
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
 }
+
 /* #endregion */
 
 /* * .MENU *//* #region */
@@ -115,27 +124,31 @@ header h1 {
     background-color: #272525;
     border-radius: 5px;
     border-width: 1px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+    /* box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px; */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     color: var(--primary);
     font-size: 22px;
     font-weight: 500;
     border-radius: 30px;
     outline: none;
     margin: 20px auto;
-    max-width: 800px;
+    max-width: 900px;
     padding: 30px 40px;
     text-align: center;
     cursor: pointer;
+    opacity: 0.8;
 
 }
 /* #endregion */
 
 /* * .BTN *//* #region */
-.btn {
+.btn,
+.btn-2 {
     border: none;
     background-color: var(--secondary);
     border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px; */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     color: hsl(0, 0%, 100%);
     font-size: 28px;
     margin: 8px 30px 2px;
@@ -146,15 +159,32 @@ header h1 {
     transition: filter 0.4s ease;
 }
   
-.btn:hover {
+.btn:hover,
+.btn-2:hover {
+    filter: brightness(1);
+    transform: scale(1.15);
+}
+
+.btn:active,
+.btn-2:active {
+    transform: scale(0.8)
+}
+
+.btn:focus,
+.btn-2:focus {
+    outline-color: transparent;
+    outline-style: solid;
+    box-shadow: 0 0 0 4px white;
     filter: brightness(1);
 }
   
-.btn.selected {
+.btn.selected,
+.btn-2.selected {
     filter: brightness(1);
     border: 2px solid white;
     margin: 6px 16px 0px;
 }
+
 /* #endregion */
 
 

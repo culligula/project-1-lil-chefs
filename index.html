@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Lil Chefs</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="./assets/styles.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 </head>
 <body>
     <div class="wrapper">
         <header>
             <h1>Lil' Chefs 🥘</h1>
         </header>
-        <main>
+        <main id="main">
             <div id="main-menu" class="menu">
                 <h2>Welcome to Lil' Chefs!!</h2>
                 <button id="ingredients-menu-btn" class="btn">Find New Recipes</button>
@@ -20,7 +23,7 @@
             </div>
             <div id="ingredients-menu" class="menu">
                 <h2>Select Ingredients</h2>
-                <div id="search-box"></div>
+                <!--  <div id="search-box"></div>  -->
                 <div id="included-ingredients" class="ingredient-grid">
                     <!--! INCLUDED --> <!-- #region -->
                     <div id="chicken-in" class="ingredient-btn">
@@ -44,29 +47,24 @@
                 <div id="excluded-ingredients" class="ingredient-grid">
                     <!--! EXCLUDED --> <!-- #region -->
                     <div id="chicken-ex" class="ingredient-btn">
-                        <button id="btn-chicken-ex" value="chicken" class="btn">🍗</button>
+                        <button id="btn-chicken-ex" value="chicken" class="btn-2">🍗</button>
                         <h3>Chicken</h3>
                     </div>
                     <div id="potatoes-ex" class="ingredient-btn">
-                        <button id="btn-potatoes-ex" value="potatoes" class="btn">🥔</button>
+                        <button id="btn-potatoes-ex" value="potatoes" class="btn-2">🥔</button>
                         <h3>Potatoes</h3>
                     </div>
                     <div id="milk-ex" class="ingredient-btn">
-                        <button id="btn-milk-ex" value="milk" class="btn">🥛</button>
+                        <button id="btn-milk-ex" value="milk" class="btn-2">🥛</button>
                         <h3>Milk</h3>
                     </div>
                     <div id="eggs-ex" class="ingredient-btn">
-                        <button id="btn-eggs-ex" value="eggs" class="btn">🥚</button>
+                        <button id="btn-eggs-ex" value="eggs" class="btn-2">🥚</button>
                         <h3>Eggs</h3>
                     </div>
                 </div>
                 <h2>Ready to go?</h2>
                 <button id="find-recipes-btn" class="btn" onclick="openPopup()">Find Recipes</button>
-            </div>
-            <div id="popup" class="popup">
-                <h3>Would you like to find recipes based on your current location and weather?</h3>
-                <button id="weather-yes" class="btn">Yes</button>
-                <button id="weather-no" class="btn">No</button>
             </div>
             <div id="new-recipes-menu" class="menu">
                 <h2>New Recipes to Try!</h2>
@@ -75,11 +73,16 @@
             </div>
             <div id="saved-recipes-menu" class="menu">
                 <h2>Your Saved Recipes</h2>
-                <!-- list of saved recipes via localstorage -->
+                <div id="saved-recipes-list"></div>
                 <button id="return-to-main-menu-2" class ="btn">Main Menu</button>
             </div>
         </main>
     </div>
+<div id="popup" class="popup">
+    <h3>Would you like to find recipes based on your current location and weather?</h3>
+    <button id="weather-yes" class="btn">Yes</button>
+    <button id="weather-no" class="btn">No</button>
+</div>
     <script src="./assets/js/food-api.js"></script>
     <script src="./assets/script.js"></script>
 </body>
