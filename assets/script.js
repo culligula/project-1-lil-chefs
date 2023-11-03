@@ -18,21 +18,21 @@ const main = document.getElementById("main");
 let longitude = 0;
 let latitude = 0;
 
-
-//template from MDN: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API
+//template for locating user coordinates from MDN: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API
 function geoLocation() {
   let status = document.querySelector("#status");
-
+  //called the lat/long coordinates from the browser; re-declared status to house coordinates
   function success(position) {
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
 
-    status = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+    status = `${latitude} , ${longitude}`;
+    //set coordinates to local storage
     localStorage.setItem("Latitude", latitude);
     localStorage.setItem("Longitude", longitude);
     gets();
   }
-
+  //created catch criteria in case of errors
   function error() {
     status.textContent = "Unable to retrieve your location";
   }
@@ -42,7 +42,7 @@ function geoLocation() {
   } else {
     navigator.geolocation.getCurrentPosition(success, error);
   }
-
+  //utilized OpenWeather API to return temperature using coordinates
   var gets = function (user) {
     var apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=343936b9fd05267869e0bf8c1d533d1c&units=imperial`;
     fetch(apiUrl)

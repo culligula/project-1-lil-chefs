@@ -4,30 +4,35 @@
 
 ## Description
 
-The provided URL above links to Lil Chefts - Recipe Ideas deployed page that allows the user to utilize the webpage by selecting the ingredients they have to generate a recipe list.
+The purpose of this project was to build an interactive web application. Lil Chefs provides options to browse and display recipe ideas, based on user preferences. The dynamic components of our website are supported by JavaScript. We have also incorporated two working API and a CSS framework to improve browsability and the overall look and feel of the site.
 
-It shall contain the following deatures and information:
+Our acceptance criteria were as follows: 
 
-The movitvation for this webpage was to allow the user to select available ingredients in their fridge so that the user can find available recipes. The webpage will recommend a recipe based off of the user's local weather by fetching their location.  
-This solves a problem by allowing the users to utilies the ingredients they have to make a bad ass meal before they go bad.
+GIVEN that a user wants to find new recipes,
+THEN he selects ingredients to include or exclude.
+WHEN the user is prompted to find recipes based on current location and weather,
+THEN the user accepts or declines the question and a discrete list of recipes are returned with options to save them for future reference. 
+WHEN the user returns to the main menu,
+THEN he can view saved recipes.
+
+All criteria were met and the site functions as expected. 
 
 ## Usage
 
-Lil Chefs - Recipe Ideas is intended to be used by students on a budget to utilize available ingredients in their fridge to make a astonishing meal.
+Lil Chefs can be used to find recipe ideas for anyone on a budget - students included - so that you can make good use of the ingredients at your disposal. And of course, you can be sure to find affordable recipes without sacrificing flavor or quality.
 
 <ul>
-<li>Each ingredients listed will have the option to check off the ingredits to include in the recipe.</li>
-<li>Fetching live local weather will generate recepies that is more weather appropriate allowing the user to enjoy nice bowl of soup on a winter night.</li> 
-<li>It may also be used to save/access previously enjoyed recipe.</li>
+<li>Find recipes ideas based on what's in your fridge.</li>
+<li>See suggestions for meals you might consider based on your local weather.</li> 
+<li>Save your favorites and access them anytime you like.</li>
 </ul>
 
-The following page previews has been added to further exhibit the functionality -
+The following screenshots show some site functionality:
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+    ![Lil-Chefs-Mockup](./assets/Images/Lil-Chefs-Mockup.png)
+    ![Lil-Chefs-Selection-Menu](./assets/Images/Lil-Chef-Selections.png)
+    ![Lil-Chefs-Location-Dialog](./assets/Images/Lil-Chef-Location-popup.png)
+    
 
 ## Contributors
 
@@ -40,7 +45,7 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Credits
 
-Credits to the following content below that served as a resource for the developers:
+The following resources were referenced in the development of this site:
 
 <ul>
 <li>CSS Framework - Lucidchart - https://lucidchart.com/</li>
@@ -52,11 +57,12 @@ Credits to the following content below that served as a resource for the develop
 ## License
 
 MIT License
+Copyright (c) [2023] [Calvin Culpepper, Tyler Fruik, Irene Joo, Amber Watson]
 
-## How to Contribute
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-## Tests
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+
