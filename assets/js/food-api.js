@@ -1,9 +1,5 @@
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 62b15a1fd130b2b1438282bb334e5a13ad04ac67
 searchContentEl = document.getElementById('search-box');
 
 
@@ -69,9 +65,4 @@ document.getElementById("find-recipes-btn").addEventListener("click", function (
     .catch(error => {
       console.error('Error:', error);
     });
-<<<<<<< HEAD
 });
-=======
-});
-
->>>>>>> 62b15a1fd130b2b1438282bb334e5a13ad04ac67

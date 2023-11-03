@@ -14,10 +14,7 @@ const savedRecipesMenu = document.getElementById('saved-recipes-menu');
 let popup = document.getElementById("popup");
 let longitude = 0;
 let latitude = 0;
-<<<<<<< HEAD
-let popup = document.getElementById("popup");
-=======
->>>>>>> 62b15a1fd130b2b1438282bb334e5a13ad04ac67
+
 // #endregion
 
 //template from MDN: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API
@@ -38,7 +35,6 @@ function geoLocation() {
         gets();
     }
 
-<<<<<<< HEAD
     status = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
     localStorage.setItem('Latitude', latitude);
     localStorage.setItem('Longitude', longitude);
@@ -90,17 +86,6 @@ var gets = function (user) {
         });
 
 }
-=======
-    function error() {
-        status.textContent = "Unable to retrieve your location";
-    }
-
-    if (!navigator.geolocation) {
-        status.textContent = "Geolocation is not supported by your browser";
-    } else {
-        navigator.geolocation.getCurrentPosition(success, error);
-    }
->>>>>>> 62b15a1fd130b2b1438282bb334e5a13ad04ac67
 
 
     var gets = function (user) {
@@ -132,7 +117,7 @@ var gets = function (user) {
 
     }
 
-};
+
 
 // #region MENU NAVIGATION
 function resetConditions() {
@@ -207,7 +192,6 @@ noBtn.addEventListener('click', () => {
     showFindRecipesMenu();
 
     //#endregion
-<<<<<<< HEAD
 })
 mainMenu.style.display = "block";
 ingredientsMenu.style.display = "none";
@@ -215,15 +199,6 @@ findRecipesMenu.style.display = "none";
 savedRecipesMenu.style.display = "none";
 modal.style.display = "none";
 
-=======
->>>>>>> 62b15a1fd130b2b1438282bb334e5a13ad04ac67
-
-    mainMenu.style.display = "block";
-    ingredientsMenu.style.display = "none";
-    findRecipesMenu.style.display = "none";
-    savedRecipesMenu.style.display = "none";
-    popup.style.display = "none";
-})
 
 function showIngredientsMenu() {
   mainMenu.style.display = "none";
@@ -293,12 +268,8 @@ yesBtn.addEventListener("click", () => {
 });
 
 noBtn.addEventListener("click", () => {
-<<<<<<< HEAD
     closePopup();
     showFindRecipesMenu();
     
-=======
-  showFindRecipesMenu();
->>>>>>> 62b15a1fd130b2b1438282bb334e5a13ad04ac67
 });
 //#endregion
