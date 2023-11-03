@@ -11,11 +11,13 @@ const mainMenu = document.getElementById("main-menu");
 const ingredientsMenu = document.getElementById("ingredients-menu");
 const findRecipesMenu = document.getElementById("new-recipes-menu");
 const savedRecipesMenu = document.getElementById("saved-recipes-menu");
-let popup = document.getElementById("popup");
+const popup = document.getElementById("popup");
 const main = document.getElementById("main");
+// #endregion
+
 let longitude = 0;
 let latitude = 0;
-// #endregion
+
 
 //template from MDN: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API
 function geoLocation() {
@@ -24,8 +26,6 @@ function geoLocation() {
   function success(position) {
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
-    // console.log(latitude);
-    // console.log(longitude);
 
     status = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
     localStorage.setItem("Latitude", latitude);
@@ -57,7 +57,6 @@ function geoLocation() {
 
               var temperature = data.main.temp;
               console.log(temperature);
-              // displayPreferredRecipes();
             }
           });
         } else {
@@ -111,75 +110,6 @@ function showModal() {
   popup.style.display = "block";
 }
 
-mainMenuBtn.addEventListener("click", () => {
-  showMainMenu();
-});
-
-ingredientsMenuBtn.addEventListener("click", () => {
-  showIngredientsMenu();
-});
-
-findRecipesBtn.addEventListener("click", () => {
-  showModal();
-});
-
-viewSavedRecipesBtn.addEventListener("click", () => {
-  showSavedRecipesMenu();
-});
-mainMenuBtn2.addEventListener("click", () => {
-  showMainMenu();
-});
-yesBtn.addEventListener("click", () => {
-  geoLocation();
-  showFindRecipesMenu();
-  //showFindRecipesMenu.add("hidden") --apply hidden class to area on html
-});
-
-noBtn.addEventListener("click", () => {
-  showFindRecipesMenu();
-
-  //#endregion
-
-  mainMenu.style.display = "block";
-  ingredientsMenu.style.display = "none";
-  findRecipesMenu.style.display = "none";
-  savedRecipesMenu.style.display = "none";
-  popup.style.display = "none";
-});
-
-function showIngredientsMenu() {
-  mainMenu.style.display = "none";
-  ingredientsMenu.style.display = "block";
-  findRecipesMenu.style.display = "none";
-  savedRecipesMenu.style.display = "none";
-  popup.style.display = "none";
-}
-
-function showFindRecipesMenu() {
-  mainMenu.style.display = "none";
-  ingredientsMenu.style.display = "none";
-  findRecipesMenu.style.display = "block";
-  savedRecipesMenu.style.display = "none";
-  popup.style.display = "none";
-}
-
-function showSavedRecipesMenu() {
-  mainMenu.style.display = "none";
-  ingredientsMenu.style.display = "none";
-  findRecipesMenu.style.display = "none";
-  savedRecipesMenu.style.display = "block";
-  popup.style.display = "none";
-}
-
-/*function showModal() {
-  modal.style.display = "block";
-}
-
-function closeModal() {
-  modal.style.visibility = "hidden";
-}
-*/
-
 function openPopup() {
   popup.classList.add("open-popup");
   main.classList.add("overlay");
@@ -190,34 +120,20 @@ function closePopup() {
   main.classList.remove("overlay");
 }
 
-mainMenuBtn.addEventListener("click", () => {
-  showMainMenu();
-});
+mainMenuBtn.addEventListener("click", showMainMenu);
 
-ingredientsMenuBtn.addEventListener("click", () => {
-  showIngredientsMenu();
-});
+ingredientsMenuBtn.addEventListener("click", showIngredientsMenu);
 
-findRecipesBtn.addEventListener("click", () => {
-  showModal();
-});
+findRecipesBtn.addEventListener("click", showModal);
 
-viewSavedRecipesBtn.addEventListener("click", () => {
-  showSavedRecipesMenu();
-});
+viewSavedRecipesBtn.addEventListener("click", showSavedRecipesMenu);
 
-mainMenuBtn2.addEventListener("click", () => {
-  showMainMenu();
-});
+mainMenuBtn2.addEventListener("click", showMainMenu);
 
 yesBtn.addEventListener("click", () => {
-  //call weather and location API and filter results as such.
-  closePopup();
-  showFindRecipesMenu();
   geoLocation();
+  showFindRecipesMenu();
 });
 
-noBtn.addEventListener("click", () => {
-  showFindRecipesMenu();
-});
+noBtn.addEventListener("click", showFindRecipesMenu);
 //#endregion
