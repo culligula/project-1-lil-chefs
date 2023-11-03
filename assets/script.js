@@ -13,6 +13,7 @@ const findRecipesMenu = document.getElementById("new-recipes-menu");
 const savedRecipesMenu = document.getElementById("saved-recipes-menu");
 const modal = document.getElementById("modal");
 let popup = document.getElementById("popup");
+const main = document.getElementById("main");
 // #endregion
 
 //template from MDN: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API
@@ -109,6 +110,7 @@ function showSavedRecipesMenu() {
 /*function showModal() {
   modal.style.display = "block";
 }
+
 function closeModal() {
   modal.style.visibility = "hidden";
 }
@@ -116,10 +118,12 @@ function closeModal() {
 
 function openPopup() {
   popup.classList.add("open-popup");
+  main.classList.add("overlay");
 }
 
 function closePopup() {
   popup.classList.remove("open-popup");
+  main.classList.remove("overlay");
 }
 
 mainMenuBtn.addEventListener("click", () => {
