@@ -83,12 +83,7 @@ const savedRecipesMenu = document.getElementById('saved-recipes-menu');
 const modal = document.getElementById('modal');
 let longitude = 0;
 let latitude = 0;
-const mainMenu = document.getElementById("main-menu");
-const ingredientsMenu = document.getElementById("ingredients-menu");
-const findRecipesMenu = document.getElementById("new-recipes-menu");
-const savedRecipesMenu = document.getElementById("saved-recipes-menu");
-const modal = document.getElementById("modal");
-let popup = document.getElementById("popup");
+
 // #endregion
 
 //template for accessing user lat/long from MDN: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API
@@ -101,88 +96,61 @@ function geoLocation() {
         // console.log(latitude);
         // console.log(longitude);
 
+
         status = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
-        localStorage.setItem("Latitude", latitude);
-        localStorage.setItem("Longitude", longitude);
+        localStorage.setItem('Latitude', latitude);
+        localStorage.setItem('Longitude', longitude);
+        gets();
     }
 
-    status = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
-    localStorage.setItem('Latitude', latitude);
-    localStorage.setItem('Longitude', longitude);
-    gets();
-}
+    function error() {
+        status.textContent = "Unable to retrieve your location";
+    }
 
-function error() {
-    status.textContent = "Unable to retrieve your location";
-}
+    if (!navigator.geolocation) {
+        status.textContent = "Geolocation is not supported by your browser";
+    } else {
+        navigator.geolocation.getCurrentPosition(success, error);
+    }
+    if (!navigator.geolocation) {
+        status.textContent = "Geolocation is not supported by your browser";
+    } else {
+        // status.textContent = "Checking location…";
+        navigator.geolocation.getCurrentPosition(success, error);
 
-if (!navigator.geolocation) {
-    status.textContent = "Geolocation is not supported by your browser";
-} else {
-    navigator.geolocation.getCurrentPosition(success, error);
-}
-if (!navigator.geolocation) {
-    status.textContent = "Geolocation is not supported by your browser";
-} else {
-    // status.textContent = "Checking location…";
-    navigator.geolocation.getCurrentPosition(success, error);
-
-}
-
-//uses the lat/long data to call user's local weather
-var gets = function (user) {
-    var apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=343936b9fd05267869e0bf8c1d533d1c&units=imperial`;
-    fetch(apiUrl)
-        .then(function (response) {
-            if (response.ok) {
-                response.json().then(function (data) {
-                    console.log(data);
-                    displayWeather();
-
-                    //if the call is successful, displayWeather is called which calls the temperature.
-                    function displayWeather() {
-                        var temperature = data.main.temp;
-                        console.log(temperature);
-                        // displayPreferredRecipes();
-                    }
-                });
-            } else {
-                alert('Error: ' + response.statusText);
-            }
-
-        })
-        .catch(function (error) {
-            alert('Unable to recommend recipes');
-        });
-
-}
+    }
 
 
-var gets = function (user) {
-    var apiUrl =
-        "https://api.openweathermap.org/data/2.5/weather?lat=" +
-        latitude +
-        "&lon=" +
-        longitude +
-        "&appid=343936b9fd05267869e0bf8c1d533d1c";
+    var gets = function (user) {
+        var apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=343936b9fd05267869e0bf8c1d533d1c&units=imperial`;
+        fetch(apiUrl)
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (data) {
+                        console.log(data);
+                        displayWeather();
 
-    fetch(apiUrl)
-        .then(function (response) {
-            if (response.ok) {
-                response.json().then(function (data) {
-                    console.log(data);
-                    displayRecipes(data);
-                });
-            } else {
-                alert("Error: " + response.statusText);
-            }
-        })
-        .catch(function (error) {
-            alert("Unable to recommend recipes");
-        });
+
+                        function displayWeather() {
+                            console.log(data);
+
+                            var temperature = data.main.temp;
+                            console.log(temperature);
+                            // displayPreferredRecipes();
+                        }
+                    });
+                } else {
+                    alert('Error: ' + response.statusText);
+                }
+
+            })
+            .catch(function (error) {
+                alert('Unable to recommend recipes');
+            });
+
+    }
+
 };
-
-
 
 
 
@@ -259,13 +227,13 @@ noBtn.addEventListener('click', () => {
     showFindRecipesMenu();
 
     //#endregion
+
+    mainMenu.style.display = "block";
+    ingredientsMenu.style.display = "none";
+    findRecipesMenu.style.display = "none";
+    savedRecipesMenu.style.display = "none";
+    modal.style.display = "none";
 })
-mainMenu.style.display = "block";
-ingredientsMenu.style.display = "none";
-findRecipesMenu.style.display = "none";
-savedRecipesMenu.style.display = "none";
-modal.style.display = "none";
-}
 
 function showIngredientsMenu() {
     mainMenu.style.display = "none";
