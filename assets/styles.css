@@ -135,7 +135,7 @@ header h1 {
     max-width: 900px;
     padding: 30px 40px;
     text-align: center;
-    cursor: pointer;
+    /* cursor: pointer; */
     opacity: 0.8;
 
 }
