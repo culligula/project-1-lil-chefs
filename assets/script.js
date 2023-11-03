@@ -83,11 +83,6 @@ const savedRecipesMenu = document.getElementById('saved-recipes-menu');
 const modal = document.getElementById('modal');
 let longitude = 0;
 let latitude = 0;
-const mainMenu = document.getElementById("main-menu");
-const ingredientsMenu = document.getElementById("ingredients-menu");
-const findRecipesMenu = document.getElementById("new-recipes-menu");
-const savedRecipesMenu = document.getElementById("saved-recipes-menu");
-const modal = document.getElementById("modal");
 let popup = document.getElementById("popup");
 // #endregion
 
@@ -110,24 +105,25 @@ function geoLocation() {
     localStorage.setItem('Latitude', latitude);
     localStorage.setItem('Longitude', longitude);
     gets();
+
+    if (!navigator.geolocation) {
+        status.textContent = "Geolocation is not supported by your browser";
+    } else {
+        navigator.geolocation.getCurrentPosition(success, error);
+    }
+    if (!navigator.geolocation) {
+        status.textContent = "Geolocation is not supported by your browser";
+    } else {
+        // status.textContent = "Checking location…";
+        navigator.geolocation.getCurrentPosition(success, error);
+    
+    }
 }
 
 function error() {
     status.textContent = "Unable to retrieve your location";
 }
 
-if (!navigator.geolocation) {
-    status.textContent = "Geolocation is not supported by your browser";
-} else {
-    navigator.geolocation.getCurrentPosition(success, error);
-}
-if (!navigator.geolocation) {
-    status.textContent = "Geolocation is not supported by your browser";
-} else {
-    // status.textContent = "Checking location…";
-    navigator.geolocation.getCurrentPosition(success, error);
-
-}
 
 //uses the lat/long data to call user's local weather
 var gets = function (user) {
@@ -265,7 +261,7 @@ ingredientsMenu.style.display = "none";
 findRecipesMenu.style.display = "none";
 savedRecipesMenu.style.display = "none";
 modal.style.display = "none";
-}
+
 
 function showIngredientsMenu() {
     mainMenu.style.display = "none";
@@ -335,6 +331,8 @@ yesBtn.addEventListener("click", () => {
 });
 
 noBtn.addEventListener("click", () => {
+    closePopup();
     showFindRecipesMenu();
+    
 });
 //#endregion
