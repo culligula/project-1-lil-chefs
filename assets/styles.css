@@ -1,6 +1,3 @@
-/* Google Fonts - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
 /* VARIABLES *//* #region */
 :root {
     --primary: white;
@@ -8,7 +5,6 @@
     --background: #1F1F1F;
 }
 /* #endregion */
-
 /* MAJOR SELECTORS *//* #region */
 *,
 *::before,
@@ -16,7 +12,6 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
-
 html,
 body,
 .wrapper {
@@ -24,7 +19,6 @@ body,
     margin: 0;
     padding: 0;
 }
-
 body {
     background-image: url('./Images/Lil-Chef.jpg');
     width: 100vw;
@@ -35,39 +29,31 @@ body {
     font-family: sans-serif;
     background-color: var(--background);
 }
-
 .wrapper {
     padding: 0px 20px;
 }
-
 .overlay {
     pointer-events: none;
 }
-
 main {
     display: relative;
 }
 /* #endregion */
-
 .ingredient-grid {
     column-count: 2;
     column-gap: 40px;
     column-rule-style: solid;
-
 }
-
 /* * HEADER *//* #region */
 header {
     text-align: center;
     color: var(--primary);
     font-size: 40px;
 }
-
 header h1 {
     margin: 20px;
 }
 /* #endregion */
-
 #search-box {
     background-color: #272525;
     border-radius: 5px;
@@ -80,13 +66,10 @@ header h1 {
     padding: 30px 40px;
     text-align: center;
 }
-
 /* * #INGREDIENTS-MENU *//* #region */
 #ingredients-menu {
-
 }
 /* #endregion */
-
 /* * MODAL *//* #region */
 .popup {
     width: 800px;
@@ -102,22 +85,19 @@ header h1 {
     color: #333;
     visibility: hidden;
     transition: transform 0.4s, top 0.4s;
-    /* should cover the entirety of the 
-    #ingredients-menu div and block 
-    functionality of all buttons beneath it. 
+    /* should cover the entirety of the
+    #ingredients-menu div and block
+    functionality of all buttons beneath it.
     Look to the end of the file for it's default
     display value. For the final functioning version,
     display has to be set to 'none'*/
 }
-
 .open-popup {
     visibility: visible;
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
 }
-
 /* #endregion */
-
 /* * .MENU *//* #region */
 .menu {
     padding: 10px 60px;
@@ -137,10 +117,8 @@ header h1 {
     text-align: center;
     cursor: pointer;
     opacity: 0.8;
-
 }
 /* #endregion */
-
 /* * .BTN *//* #region */
 .btn,
 .btn-2 {
@@ -158,18 +136,15 @@ header h1 {
     filter: brightness(0.6);
     transition: filter 0.4s ease;
 }
-  
 .btn:hover,
 .btn-2:hover {
     filter: brightness(1);
     transform: scale(1.15);
 }
-
 .btn:active,
 .btn-2:active {
     transform: scale(0.8)
 }
-
 .btn:focus,
 .btn-2:focus {
     outline-color: transparent;
@@ -177,34 +152,26 @@ header h1 {
     box-shadow: 0 0 0 4px white;
     filter: brightness(1);
 }
-  
 .btn.selected,
 .btn-2.selected {
     filter: brightness(1);
     border: 2px solid white;
     margin: 6px 16px 0px;
 }
-
 /* #endregion */
-
-
 /* ! PAGE LOAD - BOTTOM OF THE FILE *//* #region */
 #main-menu {
     display: block;
 }
-
 #ingredients-menu {
     display: none;
 }
-
 #new-recipes-menu {
     display: none;
 }
-
 #saved-recipes-menu {
     display: none;
 }
-
 #modal {
     display: none;
 }

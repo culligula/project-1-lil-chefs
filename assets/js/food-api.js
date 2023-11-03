@@ -67,8 +67,6 @@ document.getElementById("find-recipes-btn").addEventListener("click", function (
       console.error('Error:', error);
     });
 });
-<<<<<<< HEAD
-=======
 // TODO: add save button next to result, and save that result to local storage
 const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes') || '[]');
 if (savedRecipes.length > 0) {
@@ -85,4 +83,3 @@ if (savedRecipes.length > 0) {
   const container = document.getElementById('saved-recipes-list');
   container.innerHTML = '<p>No saved recipes yet.</p>';
 }
->>>>>>> 66732a856862f8ee17fbf76fa69fc23db8e1a4cc
