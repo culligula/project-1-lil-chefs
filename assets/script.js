@@ -15,6 +15,10 @@ const popup = document.getElementById("popup");
 const main = document.getElementById("main");
 // #endregion
 
+let weatherMain = '';
+let weatherTemp = 0;
+let recipesList = [];
+
 let longitude = 0;
 let latitude = 0;
 
@@ -50,13 +54,12 @@ function geoLocation() {
         if (response.ok) {
           response.json().then(function (data) {
             console.log(data);
-            displayWeather();
+            setWeather();
 
-            function displayWeather() {
-              console.log(data);
-
-              var temperature = data.main.temp;
-              console.log(temperature);
+            function setWeather() {
+              weatherTemp = data.main.temp;
+              weatherMain = data.weather[0].main;
+              setRecipeSelectionFromWeather();
             }
           });
         } else {
@@ -137,3 +140,42 @@ yesBtn.addEventListener("click", () => {
 
 noBtn.addEventListener("click", showFindRecipesMenu);
 //#endregion
+
+
+// #region RECIPE SORTING BASED ON WEATHER
+function setRecipeSelectionFromWeather() {
+  let pointer = '';
+  console.log('corn: ', weatherMain, weatherTemp);
+  if (weatherMain == 'Rain' || weatherMain == 'Drizzle' || weatherMain == 'Thunderstorm' || weatherMain == 'Snow') {
+    pointer = 'soup'
+    //dish.type
+    generateRecipesFromWeather(pointer);
+  } else if (weatherMain == 'Clear' || weatherMain == 'Cloudy') {
+      if (weatherTemp >= 70) {
+        pointer = 'sandwiches';
+        console.log(pointer);
+        // dish.type
+        generateRecipesFromWeather(pointer);
+      } else if (weatherTemp < 70 & weatherTemp >= 40) {
+        pointer = 'main-course';
+        console.log(pointer);
+        // meal.type
+        generateRecipesFromWeather(pointer);
+      } else if (weatherTemp < 40 & weatherTemp >= 10) {
+        pointer = 'soup';
+        console.log(pointer);
+        //dish.type
+        generateRecipesFromWeather(pointer);
+      } else {
+        pointer = 'pancake';
+        console.log(pointer);
+        //dish.type
+    }
+  } else {
+    //Emergency serevices
+  }
+}
+
+function generateRecipesFromWeather(pointer) {
+
+}
