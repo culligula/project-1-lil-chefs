@@ -1,11 +1,18 @@
-/* VARIABLES *//* #region */
+/* Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* VARIABLES */
+/* #region */
 :root {
     --primary: white;
     --secondary: #AF0808;
     --background: #1F1F1F;
 }
+
 /* #endregion */
-/* MAJOR SELECTORS *//* #region */
+
+/* MAJOR SELECTORS */
+/* #region */
 *,
 *::before,
 *::after {
@@ -38,13 +45,16 @@ body {
 main {
     display: relative;
 }
+
 /* #endregion */
 .ingredient-grid {
     column-count: 2;
     column-gap: 40px;
     column-rule-style: solid;
 }
-/* * HEADER *//* #region */
+
+/* * HEADER */
+/* #region */
 header {
     text-align: center;
     color: var(--primary);
@@ -53,6 +63,7 @@ header {
 header h1 {
     margin: 20px;
 }
+
 /* #endregion */
 #search-box {
     background-color: #272525;
@@ -66,11 +77,14 @@ header h1 {
     padding: 30px 40px;
     text-align: center;
 }
-/* * #INGREDIENTS-MENU *//* #region */
-#ingredients-menu {
-}
+
+/* * #INGREDIENTS-MENU */
+/* #region */
+
 /* #endregion */
-/* * MODAL *//* #region */
+
+/* * MODAL */
+/* #region */
 .popup {
     width: 800px;
     background: #fff;
@@ -79,7 +93,7 @@ header h1 {
     z-index: 1;
     top: 0%;
     left: 50%;
-    transform: translate(-50%,50%) scale(0.1);
+    transform: translate(-50%, 50%) scale(0.1);
     text-align: center;
     padding: 0 30px 30px;
     color: #333;
@@ -98,7 +112,9 @@ header h1 {
     transform: translate(-50%, -50%) scale(1);
 }
 /* #endregion */
-/* * .MENU *//* #region */
+
+/* * .MENU */
+/* #region */
 .menu {
     padding: 10px 60px;
     background-color: #272525;
@@ -115,11 +131,14 @@ header h1 {
     max-width: 900px;
     padding: 30px 40px;
     text-align: center;
-    cursor: pointer;
+    /* cursor: pointer; */
     opacity: 0.8;
 }
+
 /* #endregion */
-/* * .BTN *//* #region */
+
+/* * .BTN */
+/* #region */
 .btn,
 .btn-2 {
     border: none;
@@ -159,7 +178,9 @@ header h1 {
     margin: 6px 16px 0px;
 }
 /* #endregion */
-/* ! PAGE LOAD - BOTTOM OF THE FILE *//* #region */
+
+/* ! PAGE LOAD - BOTTOM OF THE FILE */
+/* #region */
 #main-menu {
     display: block;
 }
