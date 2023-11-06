@@ -30,11 +30,11 @@ const exclusionButtons = document.querySelectorAll(".btn-2");
 // as a search query in the call to the api
 
 let searchValue = "";
-const emptySpace = String.fromCharCode(32);
+// const emptySpace = String.fromCharCode(32);
 let exclusionValue = "";
 searchButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    searchValue += button.value;
+    searchValue += button.value + '+';
     button.classList.add("selected");
     console.log("selected button", button.value);
   });
@@ -48,6 +48,7 @@ exclusionButtons.forEach((button) => {
 function recipeListGen() {
   const query = searchValue;
   const exclusions = exclusionValue;
+  const perPage = 50;
   const apiKey = 'da196eedb5msh00e79c58139ed2ap1d41a0jsn4c2725d1a2ec';
   const apiUrl = `https://edamam-recipe-search.p.rapidapi.com/api/recipes/v2?type=public&q=${query}&excluded=${exclusions}`;
   var myHeaders = new Headers();
