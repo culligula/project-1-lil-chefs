@@ -28,10 +28,9 @@ Lil Chefs can be used to find recipe ideas for anyone on a budget - students inc
 </ul>
 
 The following screenshots show some site functionality:
-
-    ![Lil-Chefs-Mockup](./assets/Images/Lil-Chefs-Mockup.png)
-    ![Lil-Chefs-Selection-Menu](./assets/Images/Lil-Chef-Selections.png)
-    ![Lil-Chefs-Location-Dialog](./assets/Images/Lil-Chef-Location-popup.png)
+    ![Image URL-Mockup](https://github.com/culligula/project-1-lil-chefs/blob/dev/assets/Images/Lil-Chefs-Mockup.png)
+    ![Image URL-Select](https://github.com/culligula/project-1-lil-chefs/blob/dev/assets/Images/Lil-Chef-Selections.png)
+    ![Image URL-Dialog](https://github.com/culligula/project-1-lil-chefs/blob/dev/assets/Images/Lil-Chef-Location-popup.png)
     
 
 ## Contributors
