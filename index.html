@@ -35,7 +35,7 @@
                         <h3>Chicken</h3>
                     </div>
                     <div id="potatoes-in" class="ingredient-btn">
-                        <button id="btn-potatoes-in" value="potatoes" class="btn">🥔</button>
+                        <button id="btn-potatoes-in" value="potato" class="btn">🥔</button>
                         <h3>Potatoes</h3>
                     </div>
                     <div id="milk-in" class="ingredient-btn">
@@ -46,6 +46,15 @@
                         <button id="btn-eggs-in" value="eggs" class="btn">🥚</button>
                         <h3>Eggs</h3>
                     </div>
+                    <div id="onions-in" class="ingredient-btn">
+                        <button id="btn-eggs-in" value="onion" class="btn">🧅</button>
+                        <h3>Onions</h3>
+                    </div>
+                    <div id="none-in" class="ingredient-btn">
+                        <button id="btn-none-in" value="none" class="btn">🚫</button>
+                        <h3>None</h3>
+                    </div>
+                    <!-- #endregion -->
                 </div>
                 <h2>Select Exclusions</h2>
                 <div id="excluded-ingredients" class="ingredient-grid">
@@ -55,7 +64,7 @@
                         <h3>Chicken</h3>
                     </div>
                     <div id="potatoes-ex" class="ingredient-btn">
-                        <button id="btn-potatoes-ex" value="potatoes" class="btn-2">🥔</button>
+                        <button id="btn-potatoes-ex" value="potato" class="btn-2">🥔</button>
                         <h3>Potatoes</h3>
                     </div>
                     <div id="milk-ex" class="ingredient-btn">
@@ -63,20 +72,25 @@
                         <h3>Milk</h3>
                     </div>
                     <div id="eggs-ex" class="ingredient-btn">
-                        <button id="btn-eggs-ex" value="eggs" class="btn-2">🥚</button>
+                        <button id="btn-eggs-ex" value="egg" class="btn-2">🥚</button>
                         <h3>Eggs</h3>
+                    </div>
+                    <div id="onions-ex" class="ingredient-btn">
+                        <button id="btn-eggs-ex" value="onion" class="btn-2">🧅</button>
+                        <h3>Onions</h3>
                     </div>
                     <div id="none-ex" class="ingredient-btn">
                         <button id="btn-none-ex" value="none" class="btn-2">🚫</button>
-                        <h3>none</h3>
+                        <h3>None</h3>
                     </div>
+                    <!-- #endregion -->
                 </div>
                 <h2>Ready to go?</h2>
-                <button id="find-recipes-btn" class="btn" onclick="openPopup()">Find Recipes</button>
+                <button id="find-recipes-btn" class="btn">Find Recipes</button>
             </div>
             <div id="new-recipes-menu" class="menu">
                 <h2>New Recipes to Try!</h2>
-                <!-- list of new recipes w/ save button for each-->
+                <h3 id="weather-recipes-header">On a <span id="weatherTemp-txt"></span><span id="weatherMain-txt"></span> day like today, try some <span id="pointer-txt"></span> recipes!</h3>
                 <button id="return-to-main-menu" class="btn">Main Menu</button>
             </div>
             <div id="saved-recipes-menu" class="menu">

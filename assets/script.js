@@ -15,12 +15,18 @@ const popup = document.getElementById("popup");
 const main = document.getElementById("main");
 // #endregion
 
+// #region WEATHER SORTING VARIABLES
+const weatherHeader = document.getElementById('weather-recipes-header');
+const weatherTempTxt= document.getElementById('weatherTemp-txt');
+const weatherMainTxt= document.getElementById('weatherMain-txt');
+const pointerTxt = document.getElementById('pointer-txt');
+
 let weatherMain = '';
 let weatherTemp = 0;
-let recipesList = [];
-
+let pointer = '';
 let longitude = 0;
 let latitude = 0;
+// #endregion
 
 // #region FOOD API
 // get the ingredient
@@ -45,7 +51,8 @@ exclusionButtons.forEach((button) => {
   });
 });
 // api call, initiated on click
-function recipeListGen() {
+function recipeListGen(pointer) {
+  searchValue += pointer + '+';
   const query = searchValue;
   const exclusions = exclusionValue;
   const perPage = 50;
@@ -173,16 +180,13 @@ function geoLocation() {
 // #endregion
 
 // #region MENU NAVIGATION
-function resetConditions() {
-  //erase ingredients selection string and buttons
-}
-
 function showMainMenu() {
   mainMenu.style.display = "block";
   ingredientsMenu.style.display = "none";
   findRecipesMenu.style.display = "none";
   savedRecipesMenu.style.display = "none";
   popup.style.display = "none";
+  location.reload();
 }
 
 function showIngredientsMenu() {
@@ -227,56 +231,73 @@ mainMenuBtn.addEventListener("click", showMainMenu);
 
 ingredientsMenuBtn.addEventListener("click", showIngredientsMenu);
 
-findRecipesBtn.addEventListener("click", showModal);
-
 viewSavedRecipesBtn.addEventListener("click", showSavedRecipesMenu);
 
 mainMenuBtn2.addEventListener("click", showMainMenu);
 
+findRecipesBtn.addEventListener("click", () => {
+  showModal();
+  openPopup();
+});
+
 yesBtn.addEventListener("click", () => {
   geoLocation();
   showFindRecipesMenu();
+  closePopup();
 });
 
 noBtn.addEventListener("click", () => {
-  showFindRecipesMenu()
-  recipeListGen()
+  weatherHeader.style.display = 'none';
+  showFindRecipesMenu();
+  recipeListGen(pointer);
+  closePopup();
 });
 //#endregion
 
 // #region RECIPE SORTING BASED ON WEATHER
 function setRecipeSelectionFromWeather() {
-  let pointer = '';
-  console.log('corn: ', weatherMain, weatherTemp);
+  console.log(weatherMain, weatherTemp);
   if (weatherMain == 'Rain' || weatherMain == 'Drizzle' || weatherMain == 'Thunderstorm' || weatherMain == 'Snow') {
     pointer = 'soup'
-    //dish.type
-    recipeListGen();
+    weatherMainTxt.textContent = weatherMain.charAt(0).toLowerCase() + weatherMain.slice(1);
+    pointerTxt.textContent = pointer;
+    recipeListGen(pointer);
   } else if (weatherMain == 'Clear' || weatherMain == 'Cloudy') {
-      if (weatherTemp >= 70) {
-        pointer = 'sandwiches';
-        console.log(pointer);
-        // dish.type
-        recipeListGen();
-      } else if (weatherTemp < 70 & weatherTemp >= 40) {
-        pointer = 'main-course';
-        console.log(pointer);
-        // meal.type
-        recipeListGen();
+      if (weatherTemp >= 75) {
+        pointer = 'grilled';
+        weatherTempTxt.textContent = 'hot and ';
+        weatherMainTxt.textContent = weatherMain.charAt(0).toLowerCase() + weatherMain.slice(1);
+        pointerTxt.textContent = pointer;
+        recipeListGen(pointer);
+      } else if (weatherTemp < 75 & weatherTemp >= 55) {
+        pointer = 'sandwich';
+        weatherTempTxt.textContent = 'mild and ';
+        console.log(weatherMain)
+        weatherMainTxt.textContent = weatherMain.charAt(0).toLowerCase() + weatherMain.slice(1);
+        pointerTxt.textContent = pointer;
+        recipeListGen(pointer);
+      } else if (weatherTemp < 55 & weatherTemp >= 40) {
+        pointer = 'dinner';
+        weatherTempTxt.textContent = 'chilly and ';
+        weatherMainTxt.textContent = weatherMain.charAt(0).toLowerCase() + weatherMain.slice(1);
+        pointerTxt.textContent = pointer;
+        recipeListGen(pointer);
       } else if (weatherTemp < 40 & weatherTemp >= 10) {
         pointer = 'soup';
-        console.log(pointer);
-        //dish.type
-        recipeListGen();
+        weatherTempTxt.textContent = 'cold and ';
+        weatherMainTxt.textContent = weatherMain.charAt(0).toLowerCase() + weatherMain.slice(1);
+        pointerTxt.textContent = pointer;
+        recipeListGen(pointer);
       } else {
         pointer = 'pancake';
-        console.log(pointer);
-        //dish.type
-        recipeListGen();
+        weatherTempTxt.textContent = 'straight up frozen and ';
+        weatherMainTxt.textContent = weatherMain.charAt(0).toLowerCase() + weatherMain.slice(1);
+        pointerTxt.textContent = pointer;
+        recipeListGen(pointer);
     }
   } else {
     //Emergency serevices
-    recipeListGen();
+    recipeListGen(pointer);
   }
 }
 // #endregion
