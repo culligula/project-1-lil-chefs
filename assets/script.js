@@ -262,7 +262,7 @@ function setRecipeSelectionFromWeather() {
     weatherMainTxt.textContent = weatherMain.charAt(0).toLowerCase() + weatherMain.slice(1);
     pointerTxt.textContent = pointer;
     recipeListGen(pointer);
-  } else if (weatherMain == 'Clear' || weatherMain == 'Cloudy') {
+  } else if (weatherMain == 'Clear' || weatherMain == 'Clouds') {
       if (weatherTemp >= 75) {
         pointer = 'grilled';
         weatherTempTxt.textContent = 'hot and ';
